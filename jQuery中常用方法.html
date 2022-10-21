@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery中常用方法</title>
+</head>
+
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script src="node_modules/jquery/dist/jquery.min.js">
+        $A.insertBefore($B);//把$A放到$B的前面（注意$A和$B都是页面中已经存在的元素）
+        $A .insertAfter($B);
+        $(`<div id="box" class="box">哈哈</div>`).insertBefore("$A");//需要把新增加元素放到$A前面，需要把字符串用$()抱起来相当于创建了一个元素 
+
+    </script>
+</body>
+
+</html>

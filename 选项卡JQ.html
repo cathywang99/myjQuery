@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <!-- IMPORT CSS -->
+    <link rel="stylesheet" href="选项卡.css">
+</head>
+
+<body>
+    <div class="tabBox">
+        <ul class="navBox">
+            <li class="active">编程</li>
+            <li>读书</li>
+            <li>运动</li>
+        </ul>
+        <div class="active">编程使我快乐</div>
+        <div>读书使我幸福</div>
+        <div>运动使我健康</div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(".tabBox>.navBox>li").click(function () {
+            let n = $(this).index();
+            $(this).addClass("active")
+                .siblings().removeClass()
+                .parent()
+                .nextAll("div").eq(n)
+                .addClass("active")
+                .siblings()
+                .removeClass("active");
+        });
+    </script>
+    <!--    <script>
+        // $([function]):等待页面中所有的DOM结构加载完成才会执行这个方法，相当于=>$(document).ready([function]) 
+        //window.onload=function(){}:等待页面中所有的资源都加载完才会执行函数
+        //也是个闭包
+        $(function(){
+            //选项卡正常思路，给所有的LI绑定点击事件，当点击某一个LI的时候，让其有选中样式，而其余的LI都移除选中样式。同时对应索引的div有选中样式，其余的div移除选中样式。这样就可以实现选项卡切换效果。
+            let $tabBox=$("#tabBox"),
+                $navList=$tabBox.find("navBox>li"),
+                //=>$("#tabBox>#navBox>li);
+                $divList=$tabBox.children('div');
+                //console.log($navList);
+            //JQ特性：内置循环处理机制(基于一个JQ集合去操作某个方法，我们无需循环每一项单独操作，JQ内部帮我们循环处理了)
+            $navList.on("click",function(){
+                //this：当前点击操作的元素=>$(this)
+                //JQ特性：链式写法
+                let n=$(this).index();
+                $(this).addClass("active").siblings().removeClass("active");
+
+                $divList.eq(n).addClass("active").siblings().removeClass("active");
+            });
+
+        })
+    </script> -->
+</body>
+
+</html>

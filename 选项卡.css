@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.tabBox {
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 500px;
+}
+
+.navBox {
+    /* 只要把容器设置为FLEX弹性盒子容器，那么容器中的子元素默认在容器主轴(x轴)水平靠左排列 */
+    display: flex;
+    /* relative相对于自己之前的位置定位，后再向下移0.5像素 */
+    position: relative;
+    top: 0.5px;
+}
+
+.navBox li {
+    box-sizing: border-box;
+    margin-right: 10px;
+    /* 边距 */
+    padding: 0 10px;
+    /* 行高 */
+    line-height: 35px;
+    /* 间距 */
+    border: 1px solid #999;
+}
+
+.navBox li.active {
+    border-bottom-color: #FFF
+}
+
+.tabBox>div {
+    /* none默认隐藏，被选中的那一个才显示 */
+    display: none;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 200px;
+    border: 1px solid #999;
+}
+
+/* 选中div中具有active的，不能加空格 */
+.tabBox>div.active {
+    display: block; 
+}
